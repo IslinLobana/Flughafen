@@ -1,4 +1,4 @@
-public class Flugzeug {
+public class Flugzeuge {
         //DEKLARATION
         String _nummer;
         int _passagiereMax;
@@ -6,13 +6,14 @@ public class Flugzeug {
         String _hersteller;
     
         //CONSTRUCTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen
-        public Flugzeug (String nummer, int passagiereMax, int pilotenMax, String hersteller) {
+        public Flugzeuge (String nummer, int passagiere, int piloten, String hersteller) {
             this.setNummer(nummer);
-            this.setPassagiereMax(passagiereMax);
-            this.setPilotenMax(pilotenMax);
+            this.setPassagiereMax(passagiere);
+            this.setPilotenMax(piloten);
             this.setHersteller(hersteller);
         }
     
+
         //GETTER
         public String getNummer(){
             return _nummer;

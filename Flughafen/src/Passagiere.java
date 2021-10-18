@@ -1,10 +1,10 @@
-public class Pilot {
+public class Passagiere {
         //DEKLARATION
         String _vorname;
         String _nachname;
     
         //CONSTRUCTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen
-        public Pilot (String vorname, String nachname) {
+        public Passagiere (String vorname, String nachname) {
             this.setVorname(vorname);
             this.setNachname(nachname);
         }

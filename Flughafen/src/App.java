@@ -5,84 +5,84 @@ public class App {
 
 
 
-    public static void addAirline(Airline airline){
-        addObject(airline, getALLAirline());
+    public static void addAirline(Airlines airlines){
+        addObject(airlines, getALLAirlines());
     }
-    static Airline[] _airline;
-    public static Airline[] getALLAirline(){
-        return _airline;
-    }
-
-
-
-    public static void addBahn(Bahn bahn){
-        addObject(bahn, getALLBahn());
-    }
-
-    static Bahn [] _bahn;
-    public static Bahn[] getALLBahn(){
-        return _bahn;
+    static Airlines[] _airlines;
+    public static Airlines[] getALLAirlines(){
+        return _airlines;
     }
 
 
-    public static Flug [] getALLFlug(){
-        return _flug;
+
+    public static void addBahn(Bahnen bahnen){
+        addObject(bahnen, getALLBahnen());
     }
-    static Flug [] _flug;
-    public static void addFlug(Flug flug){
-        addObject(flug, getALLFlug());
+
+    static Bahnen [] _bahnen;
+    public static Bahnen[] getALLBahnen(){
+        return _bahnen;
     }
 
 
-    public static Flughafen[] getALLFlughafen(){
-        return _flughafen;
+    public static Fluege [] getALLFluege(){
+        return _fluege;
     }
-    static Flughafen[] _flughafen;
-    public static void addFlughafen(Flughafen flughafen){
-        addObject(flughafen, getALLFlughafen());
-    }
-
-
-    public static Fluglinie[] getALLFluglinie(){
-        return _fluglinie;
-    }
-    static Fluglinie[] _fluglinie;
-    public static void addFluglinie(Fluglinie fluglinie){
-        addObject(fluglinie, getALLFluglinie());
-    }
-
-    public static Flugzeug[] getALLFlugzeug(){
-        return _flugzeug;
-    }
-    static Flugzeug[] _flugzeug;
-    public static void addFlugzeug(Flugzeug flugzeug){
-        addObject(flugzeug, getALLFlugzeug());
+    static Fluege [] _fluege;
+    public static void addFlug(Fluege fluege){
+        addObject(fluege, getALLFluege());
     }
 
 
-    public static Passagier[] getALLPassagier(){
-        return _passagier;
+    public static Flughaefen[] getALLFlughaefen(){
+        return _flughaefen;
     }
-    static Passagier[] _passagier;
-    public static void addPassagier(Passagier passagier){
-        addObject(passagier, getALLPassagier());
+    static Flughaefen[] _flughaefen;
+    public static void addFlughafen(Flughaefen flughaefen){
+        addObject(flughaefen, getALLFlughaefen());
+    }
+
+
+    public static Fluglinien[] getALLFluglinien(){
+        return _fluglinien;
+    }
+    static Fluglinien[] _fluglinien;
+    public static void addFluglinie(Fluglinien fluglinien){
+        addObject(fluglinien, getALLFluglinien());
+    }
+
+    public static Flugzeuge[] getALLFlugzeuge(){
+        return _flugzeuge;
+    }
+    static Flugzeuge[] _flugzeuge;
+    public static void addFlugzeug(Flugzeuge flugzeuge){
+        addObject(flugzeuge, getALLFlugzeuge());
     }
 
 
-    public static Pilot[] getALLPilot(){
-        return _pilot;
+    public static Passagiere[] getALLPassagiere(){
+        return _passagiere;
     }
-    static Pilot[] _pilot;
-    public static void addPilot(Pilot pilot){
-        addObject(pilot, getALLPilot());
+    static Passagiere[] _passagiere;
+    public static void addPassagier(Passagiere passagiere){
+        addObject(passagiere, getALLPassagiere());
     }
 
-    public static Terminal[] getALLTerminal(){
-        return _terminal;
+
+    public static Piloten[] getALLPiloten(){
+        return _piloten;
     }
-    static Terminal[] _terminal;
-    public static void addTerminal(Terminal terminal){
-        addObject(terminal, getALLTerminal());
+    static Piloten[] _piloten;
+    public static void addPilot(Piloten piloten){
+        addObject(piloten, getALLPiloten());
+    }
+
+    public static Terminals[] getALLTerminals(){
+        return _terminals;
+    }
+    static Terminals[] _terminals;
+    public static void addTerminal(Terminals terminals){
+        addObject(terminals, getALLTerminals());
     }
 
     //15 Punkte lösung:
@@ -102,35 +102,40 @@ public class App {
     //Main-Methode ist immer der Einsteigspunkt des Programms
     public static void main(String[] args) throws Exception {
         //Initialisierung _autos --> In Klammer steht Anzahl der möglichen Elemente eines Arrays
-        _airline = new Airline[8];
-        _airline [0] = new Airline("BMW", "I3", "2020");
-        _airline [1] = new Airline("Mercedes", "A220", "2019");
-        _airline [2] = new Airline("VW", "Polo", "2005");
+        _airlines = new Airlines[8];
+        _airlines [0] = new Airlines("BMW", "I3", "2020");
+        _airlines [1] = new Airlines("Mercedes", "A220", "2019");
+        _airlines [2] = new Airlines("VW", "Polo", "2005");
         
         //Initialisierung _kunden
-        _bahn = new Bahn[8];
-        _bahn [0] = new Bahn("Herbert");
-        _bahn [1] = new Bahn("Hans");
+        _bahnen = new Bahnen[8];
+        _bahnen [0] = new Bahnen("Herbert");
+        _bahnen [1] = new Bahnen("Hans");
 
         //Initialisierung _verkaeufe
-        _flughafen = new Flughafen[8];
-        _flughafen [0] = new Flughafen("Jordan", "Velte");
-        _flughafen [1] = new Flughafen("Thomas", "Mueller");
+        _flughaefen = new Flughaefen[8];
+        _flughaefen [0] = new Flughaefen("Jordan", "Velte");
+        _flughaefen [1] = new Flughaefen("Thomas", "Mueller");
 
 
-        _fluglinie = new Fluglinie[8];
-        _fluglinie [0] = new Fluglinie("Jordan");
-        _fluglinie [1] = new Fluglinie("Thomas");
+        _fluglinien = new Fluglinien[8];
+        _fluglinien [0] = new Fluglinien("Jordan");
+        _fluglinien [1] = new Fluglinien("Thomas");
 
 
-        _passagier= new Passagier[8];
-        _passagier [0] = new Passagier("Jordan", "Velte");
-        _passagier [1] = new Passagier("Thomas", "Mueller");
+        _flugzeuge = new Flugzeuge[8];
+        _flugzeuge [0] = new Flugzeuge("Jordan", 200, 2, "Airbus");
 
 
-        _pilot = new Pilot[8];
-        _pilot [0] = new Pilot("Jordan", "Velte");
-        _pilot [1] = new Pilot("Thomas", "Mueller");
+
+        _passagiere= new Passagiere[8];
+        _passagiere [0] = new Passagiere("Jordan", "Velte");
+        _passagiere [1] = new Passagiere("Thomas", "Mueller");
+
+
+        _piloten = new Piloten[8];
+        _piloten [0] = new Piloten("Jordan", "Velte");
+        _piloten [1] = new Piloten("Thomas", "Mueller");
         
         //Neues Objekt der Klasse Menu
         Menu menu = new Menu();

@@ -33,11 +33,9 @@ public class Menu {
         String choice = getScanner().nextLine();
         System.out.println("Deine Auswahl ist: " + choice);
 
-        //IF-Bedingung nach TRUE und FALSE (siehe Foto) 
         if(choice.equals("1")){
             createAirlineMenu();
         }
-        //immer bei Bedingungen: WERT OPERATOR VERGLEICHSWERT
         else if(choice.equals("2")){
             createBahnMenu();
         }
@@ -45,233 +43,323 @@ public class Menu {
             createFlugMenu();
         }
         else if(choice.equals("4")){
-            createFlughafenMenu();
+            createFluglinieMenu();
         }
         else if(choice.equals("5")){
-            createFluglinieMenu();
+            createFlugzeugMenu();
         }
         else if(choice.equals("6")){
             createFlugzeugMenu();
         }
         else if(choice.equals("7")){
-            createFlugzeugMenu();
-        }
-        else if(choice.equals("8")){
             createPassagierMenu();
         }
-        else if(choice.equals("9")){
+        else if(choice.equals("8")){
             createPilotMenu();
         }
-        else if(choice.equals("10")){
+        else if(choice.equals("9")){
             createTerminalMenu();
         }
+        else if(choice.equals("10")){
+            showAirlines();
+        }
         else if(choice.equals("11")){
-            showAirline();
+            showBahnen();
         }
         else if(choice.equals("12")){
-            showBahn();
+            showFluege();
         }
         else if(choice.equals("13")){
-            showFlug();
+            showFlughaefen();
         }
         else if(choice.equals("14")){
-            showFlughafen();
+            showFluglinien();
         }
         else if(choice.equals("15")){
-            showFluglinie();
+            showFlugzeuge();
         }
         else if(choice.equals("16")){
-            showFlugzeug();
+            showPassagiere();
         }
         else if(choice.equals("17")){
-            showPassagier();
+            showPiloten();
         }
         else if(choice.equals("18")){
-            showPilot();
-        }
-        else if(choice.equals("19")){
-            showTerminal();
+            showTerminals();
         }
         else{
-            System.out.println("Bitte nur 1 - 19 eingeben!");
+            System.out.println("Bitte nur 1 - 18 eingeben!");
         }
         startMenu();
     }
 
   
-    public void showAirline(){
+    public void showAirlines(){
         //For-Each Schleife
-        for (Airline airline : App.getALLAirline()){
-            if(airline != null){
-                System.out.println(airline.getName() + " " + airline.getBaujah());
+        for (Airlines airlines : App.getALLAirlines()){
+            if(airlines != null){
+                System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
             }
         }
     }
-    public void showKunden(){
-        for (Kunden kunden : App.getALLKunden()){
-            if(kunden != null){
-                System.out.println(kunden.getVorname() + " " + kunden.getNachname());
+    public void showBahnen(){
+        for (Bahnen bahnen : App.getALLBahnen()){
+            if(bahnen != null){
+                System.out.println(bahnen.getName());
             }
         }
     }
-    public void showVerkaeufer(){
-        for (Verkaeufer verkaeufer : App.getALLVerkaeufer()){
-            if(verkaeufer != null){
-                System.out.println(verkaeufer.getVorname() + " " + verkaeufer.getNachname());
-            }
-        }
-    }
-    public void showAutos(){
+    public void showFluege(){
         //For-Each Schleife
-        for (Autos autos : App.getALLAutos()){
-            if(autos != null){
-                System.out.println(autos.getMarke() + " " + autos.getBaujahr());
+        for (Fluege fluege : App.getALLFluege()){
+            if(fluege != null){
+                System.out.println(fluege.getFlugzeuge().getNummer() + " " + fluege.getFlugzeuge().getPassagiereMax() + " " + fluege.getFlugzeuge().getPilotenMax() + " " + fluege.getFlugzeuge().getHersteller() + " Fluglinie: " + fluege.getFluglinien().getName() + " Piloten: " + fluege.getPiloten().getVorname() + " " + fluege.getPiloten().getNachname() + " Passagiere: " + fluege.getPassagiere().getVorname() + " " + fluege.getPassagiere().getNachname() + " Bahn: " + fluege.getBahnen().getName() + " " + fluege.getStartzeit());
             }
         }
     }
-    public void showKunden(){
-        for (Kunden kunden : App.getALLKunden()){
-            if(kunden != null){
-                System.out.println(kunden.getVorname() + " " + kunden.getNachname());
+    public void showFlughaefen(){
+        for (Flughaefen flughaefen : App.getALLFlughaefen()){
+            if(flughaefen != null){
+                System.out.println(flughaefen.getName() + " " + flughaefen.getStandort());
             }
         }
     }
-    public void showVerkaeufer(){
-        for (Verkaeufer verkaeufer : App.getALLVerkaeufer()){
-            if(verkaeufer != null){
-                System.out.println(verkaeufer.getVorname() + " " + verkaeufer.getNachname());
+    public void showFluglinien(){
+        for (Fluglinien fluglinien : App.getALLFluglinien()){
+            if(fluglinien != null){
+                System.out.println(fluglinien.getName());
+            }
+        }
+    }
+    public void showFlugzeuge(){
+        for (Flugzeuge flugzeuge : App.getALLFlugzeuge()){
+            if(flugzeuge != null){
+                System.out.println(flugzeuge.getNummer() + " " + flugzeuge.getPassagiereMax() + " " + flugzeuge.getPilotenMax() + " " + flugzeuge.getHersteller());
+            }
+        }
+    }
+    public void showPassagiere(){
+        for (Passagiere passagiere : App.getALLPassagiere()){
+            if(passagiere != null){
+                System.out.println(passagiere.getVorname()+ " " + passagiere.getNachname());
+            }
+        }
+    }
+    public void showPiloten(){
+        for (Piloten piloten : App.getALLPiloten()){
+            if(piloten != null){
+                System.out.println(piloten.getVorname() + " " + piloten.getNachname());
+            }
+        }
+    }
+    public void showTerminals(){
+        for (Terminals terminals: App.getALLTerminals()){
+            if(terminals != null){
+                System.out.println(terminals.getName() + " Flugzeug: " + terminals.getAirlines().getFlugzeuge().getNummer() + " " + terminals.getAirlines().getFlugzeuge().getPassagiereMax() + " " + terminals.getAirlines().getFlugzeuge().getPilotenMax() + " " + terminals.getAirlines().getFlugzeuge().getHersteller() + " Fluglinie: " + terminals.getAirlines().getFluglinien().getName());
             }
         }
     }
 
-    //Über Punktnotation Getter der Klasse aufrufen
-    public void showVerkaeufe(){
-        int gesamtpreis = 0;
-        for (Verkauf verkauf : App.getALLVerkauf()){
-            if (verkauf != null){
-                System.out.println("Auto: " + verkauf.getAuto().getMarke() + " " + verkauf.getAuto().getModell() + " Kunde: " + verkauf.getKunde().getVorname() + " " + verkauf.getKunde().getNachname() +" Verkäufer: " + verkauf.getVerkaeufer().getVorname() + " " + verkauf.getVerkaeufer().getNachname() + " Preis: " + verkauf.getPreis());
-                //siehe Null --> If-Abfrage
-                gesamtpreis = gesamtpreis + verkauf.getPreis();
+
+
+
+
+    public void createAirlineMenu(){
+        System.out.println("Airline erstellen.");
+        System.out.print("Geben Sie den Namen ein: ");
+        String choicename = getScanner().nextLine();
+        int a = 0;
+        System.out.println("Bitte wähle ein Flugzeug aus: ");
+        for(Flugzeuge flugzeuge : App.getALLFlugzeuge()){
+            if(flugzeuge != null){
+                System.out.println(a + " - " + flugzeuge.getNummer() + " " + flugzeuge.getPassagiereMax() + " " + flugzeuge.getPilotenMax() + " " + flugzeuge.getHersteller());
+                a++;
             }
         }
-        System.out.println("Der Gesamtpreis beträgt: " + gesamtpreis);
+                // Eingabe des Strings
+                String flugzeugchoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLFlugzeuge());
+               
+                a = 0;
+        int b = 0;
+        System.out.println("Bitte wähle eine Fluglinie aus: ");
+        for(Fluglinien fluglinien : App.getALLFluglinien()){
+            if(fluglinien != null){
+                System.out.println(b + " - " + fluglinien.getName());
+                b++;
+            }
+        }
+                // Eingabe des Strings
+                String flugliniechoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLFluglinien());
+               
+                b = 0;
+        System.out.println("Es wurde eine neue Airline eingetragen.");
+        App.addAirline(new Airlines(choicename, flugzeugchoice, flugliniechoice));
+        System.out.println(App.getALLAirlines());
     }
 
+    public void createBahnMenu(){
+        System.out.println("Bahn erstellen.");
+        System.out.print("Geben Sie den Namen ein:");
+        String choicename = getScanner().nextLine();
+        System.out.println("Es wurde eine neue Bahn eingetragen.");
+        App.addBahn(new Bahnen(choicename));
+        System.out.println(App.getALLBahnen()); 
+
+
+
+
+    }
+    public void createFlugMenu(){
+        System.out.println("Flug erstellen.");
+        System.out.println("Bitte wähle ein Flugzeug aus: ");
+        int a = 0;
+        for(Flugzeuge flugzeuge : App.getALLFlugzeuge()){
+            if(flugzeuge != null){
+                System.out.println(a + " - " + flugzeuge.getNummer() + " " + flugzeuge.getPassagiereMax() + " " + flugzeuge.getPilotenMax() + " " + flugzeuge.getHersteller());
+                a++;
+            }
+        }
+                // Eingabe des Strings
+                String flugzeugchoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLFlugzeuge());
+               
+                a = 0;
+        int b = 0;
+        System.out.println("Bitte wähle eine Fluglinie aus: ");
+        for(Fluglinien fluglinien : App.getALLFluglinien()){
+            if(fluglinien != null){
+                System.out.println(b + " - " + fluglinien.getName());
+                b++;
+            }
+        }
+                // Eingabe des Strings
+                String flugliniechoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLFluglinien());
+               
+                b = 0;
+                
+        int c = 0;
+        System.out.println("Bitte wähle einen Piloten aus: ");
+        for(Piloten piloten: App.getALLPiloten()){
+            if(piloten != null){
+                System.out.println(c+ " - " + piloten.getVorname() + " " + piloten.getNachname());
+                c++;
+            }
+        }
+                // Eingabe des Strings
+                String pilotchoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLPiloten());
+               
+                c = 0;
+        int d = 0;
+        System.out.println("Bitte wähle Passagiere aus: ");
+        for(Passagiere passagiere : App.getALLPassagiere()){
+            if(passagiere != null){
+                System.out.println(d + " - " + passagiere.getVorname()+ " " + passagiere.getNachname());
+                d++;
+            }
+        }
+        // Eingabe des Strings
+    String passagierchoice = getScanner().next();
+    System.out.println(App.getALLPassagiere());
+               
+        d = 0;
+        int e = 0;
+            System.out.println("Bitte wähle eine Bahn aus: ");
+                for(Bahnen bahnen : App.getALLBahnen()){
+                    if(bahnen != null){
+                        System.out.println(e + " - " + bahnen.getName());
+                        e++;
+                    }
+                }
+    // Eingabe des Strings
+    String bahnchoice = getScanner().next();
+    System.out.println(App.getALLPassagiere());
+                       
+    System.out.print("Geben Sie die Startzeit ein:");
+    String startzeitchoice = getScanner().nextLine();
+
+
+        System.out.println("Es wurde ein neuer Flug eingetragen.");
+        App.addFlug(new Fluege(flugzeugchoice, flugliniechoice, pilotchoice, passagierchoice, bahnchoice, startzeitchoice));
+        System.out.println(App.getALLFluege());
+    }
+    public void createFluglinieMenu(){
+        System.out.println("Fluglinie erstellen.");
+        System.out.print("Geben Sie den Namen ein:");
+        String choicename = getScanner().nextLine();
+        System.out.println("Es wurde eine neue Fluglinie eingetragen.");
+        App.addFluglinie(new Fluglinien(choicename));
+        System.out.println(App.getALLFluglinien());
+    }
     
-    //createAutos-Methode, Work in Progress --> deshalb Kommentar tbd
-    public void createAutoMenu(){
-        //System.out.print --> Cursor ist genau am Ende des Strings für die Eingabe im Terminal
-        System.out.println("Auto erstellen.");
-        System.out.print("Geben Sie die Marke ein:");
-        String choicemarke = getScanner().nextLine();
-        System.out.print("Geben Sie das Modell ein:");
-        String choicemodell = getScanner().nextLine();
-        System.out.print("Geben Sie das Baujahr ein:");
-        String choicebaujahr = getScanner().nextLine();
-        /*System.out.print("Geben Sie den Preis ein:");
-        String choicepreis = getScanner().nextLine();
-        System.out.print("Geben Sie das Baujahr ein:");
-        String choicebaujahr = getScanner().nextLine();*/
-        System.out.println("Es wurde ein neues Auto eingetragen.");
-        //Variablen zu einem Auto zusammensetzen, Objekt wird erzeugt, welches direkt in einen Array gesetzt wird.
-        App.addAuto(new Autos(choicemarke, choicemodell, choicebaujahr));
-        System.out.println(App.getALLAutos());
-        //System.out.println("Marke: " + choicemarke);
-        //System.out.println("Preis: " + choicepreis);
-        //System.out.println("Modell: " + choicemodell);
-        //System.out.println("Baujahr: " + choicebaujahr);
-        //Objekt Auto a1 wird erstellt (siehe Constructor der Klasse Autos)
-        //Autos a1 = new Autos(choicemarke, choicemodell);
-        //startMenu();
-    }
-    //Kunden-Menu-Methode
-    public void createKundeMenu(){
-        System.out.println("Vorname:");
+
+    public void createFlugzeugMenu(){
+        System.out.println("Flugzeug erstellen.");
+        System.out.print("Geben Sie die Nummer ein:");
+        String choicenummer = getScanner().nextLine();
+        System.out.print("Geben Sie die maximalen Passagiere ein:");
+        String choicepassagiere = getScanner().next();
+        int passagieremax = Integer.valueOf(choicepassagiere);
+        System.out.print("Geben Sie die maximalen Piloten ein:");
+        String choicepiloten = getScanner().next();
+        int pilotenmax = Integer.valueOf(choicepiloten);
+        System.out.print("Geben Sie den Hersteller ein:");
+        String choicehersteller = getScanner().nextLine();
+        System.out.println("Es wurde ein neues Flugzeug eingetragen.");
+        App.addFlugzeug(new Flugzeuge(choicenummer, passagieremax, pilotenmax, choicehersteller));
+        System.out.println(App.getALLFlugzeuge());
+    }  
+
+
+    public void createPassagierMenu(){
+        System.out.println("Passagier erstellen.");
+        System.out.print("Geben Sie den Vornamen ein:");
         String choicevorname = getScanner().nextLine();
-        System.out.println("Nachname");
-        String choicenachname = getScanner().nextLine();
-        System.out.println("Es wurde ein neuer Kunde eingetragen.");
-        App.addKunde(new Kunden(choicevorname, choicenachname));
-        System.out.println(App.getALLKunden());
-        /* System.out.println("Vorname: " + choicevorname);
-        System.out.println("Nachname: " + choicenachname);
-        Kunden k1 = new Kunden(choicevorname, choicenachname);
-        System.out.println(); */
-    }
-    //Verkaeufer-Menu-Methode
-    public void createVerkaeuferMenu(){
-        System.out.println("Vorname:");
+        System.out.print("Geben Sie den Nachnamen ein:");
+        String choicenachname = getScanner().next();
+        System.out.println("Es wurde ein neuer Passagier eingetragen.");
+        App.addPassagier(new Passagiere(choicevorname, choicenachname));
+        System.out.println(App.getALLPassagiere());
+    }  
+
+
+    public void createPilotMenu(){
+        System.out.println("Pilot erstellen.");
+        System.out.print("Geben Sie den Vornamen ein:");
         String choicevorname = getScanner().nextLine();
-        System.out.println("Nachname: ");
-        String choicenachname = getScanner().nextLine();
-        System.out.println("Personalnummer: ");
-        String choicepersonalnummer = getScanner().nextLine();
-        Integer persnr = Integer.valueOf(choicepersonalnummer);
-        System.out.println("Es wurde ein neuer Verkaeufer eingetragen.");
-        App.addVerkaeufer(new Verkaeufer(choicevorname, choicenachname));
-        System.out.println(App.getALLKunden());
-        /*System.out.println("Vorname: " + choicevorname);
-        System.out.println("Vorname: " + choicenachname);
-        Verkaeufer v1 = new Verkaeufer(choicevorname, choicenachname); */
-    }
-    //Verkauf-Menu-Methode
-    public void createVerkaufMenu(){
-        //Auswahl des Preises
-        System.out.println("Bitte wähle Preis aus: ");
-        // Eingabe des Strings
-        String price_choice = getScanner().next();
-        //String in Integer umwandeln
-        int price = Integer.valueOf(price_choice);
-
- 
-        
-        //AUTOs
-        //Index für Auswahl des richtigen Autos
-        int i = 0;
-        System.out.println("Bitte wähle Auto aus: ");
-        // Zuerst null, dann um einen erhöht
-        for(Autos autos : App.getALLAutos()){
-            if(autos != null){
-                System.out.println(i + " - " + autos.getMarke() + " " + autos.getModell());
-                i++;
-            }
-        }
-        // Eingabe des Strings
-        String car_choice = getScanner().next();
-        //String in Integer umwandeln
-        int car_index = Integer.valueOf(car_choice);
-        //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
-        System.out.println(App.getALLAutos() [car_index]);
-       
-        i = 0;
-        //Auswahl des Kundens
-        System.out.println("Bitte wähle Kunde aus: ");
-        for(Kunden kunden : App.getALLKunden()){
-            if(kunden != null){
-                System.out.println(i + " - " + kunden.getVorname() + " " + kunden.getNachname());
-                i++;
-            }
-        }
-        String client_choice = getScanner().next();
-        int client_index = Integer.valueOf(client_choice);
-        System.out.println(App.getALLKunden()[client_index]);
-        
-        i=0;
-        //Auswahl des Verkäufers
-        System.out.println("Bitte wähle Verkäufer aus: ");
-        for(Verkaeufer verkaeufer : App.getALLVerkaeufer()){
-            if(verkaeufer != null){
-                System.out.println(i + " - " + verkaeufer.getVorname() + " " + verkaeufer.getNachname() + " " + verkaeufer.getPersonalnummer());
-                i++;
-            }
-        }
-        String vendor_choice = getScanner().next();
-        int vendor_index = Integer.valueOf(vendor_choice);
-        System.out.println(App.getALLVerkaeufer()[vendor_index]);
+        System.out.print("Geben Sie den Nachnamen ein:");
+        String choicenachname = getScanner().next();
+        System.out.println("Es wurde ein neuer Pilote eingetragen.");
+        App.addPilot(new Piloten(choicevorname, choicenachname));
+        System.out.println(App.getALLPiloten());
+    }  
 
 
-        //Hinzufügen in Array (Price neu)
-        App.addVerkauf(new Verkauf(App.getALLAutos()[car_index], App.getALLVerkaeufer()[vendor_index], App.getALLKunden()[client_index], price));
-    }   
+    public void createTerminalMenu(){
+        System.out.println("Terminal erstellen.");
+        System.out.print("Geben Sie den Namen ein:");
+        String choicename = getScanner().nextLine();
+        int a = 0;
+        for(Airlines airlines : App.getALLAirlines()){
+            if(airlines != null){
+                System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
+                a++;
+            }
+        }
+                // Eingabe des Strings
+                String flugzeugchoice = getScanner().next();
+                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
+                System.out.println(App.getALLFlugzeuge());
+               
+                a = 0;
+        }
 }
 

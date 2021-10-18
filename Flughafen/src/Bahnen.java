@@ -1,9 +1,9 @@
-public class Bahn {
+public class Bahnen {
      //DEKLARATION
      String _name;
  
      //CONSTRUCTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen
-     public Bahn (String name) {
+     public Bahnen (String name) {
          this.setName(name);
      }
  

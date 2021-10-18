@@ -1,4 +1,4 @@
-public class Flug {
+public class Fluege {
        //DEKLARATION
        String _flugzeug;
        String _fluglinie;
@@ -8,29 +8,29 @@ public class Flug {
        String _startzeit;
    
        //CONSTRUCTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen
-       public Flug (String flugzeug, String fluglinie, String pilot, String passagier, String bahn, String startzeit) {
-           this.setFlugzeug(flugzeug);
-           this.setFluglinie(fluglinie);
-           this.setPilot(pilot);
-           this.setPassagier(passagier);
-           this.setBahn(bahn);
+       public Fluege (String flugzeug, String fluglinie, String pilot, String passagier, String bahn, String startzeit) {
+           this.setFlugzeuge(flugzeug);
+           this.setFluglinien(fluglinie);
+           this.setPiloten(pilot);
+           this.setPassagiere(passagier);
+           this.setBahnen(bahn);
            this.setStartzeit(startzeit);
        }
    
        //GETTER
-       public String getFlugzeug(){
+       public String getFlugzeuge(){
            return _flugzeug;
        }
-       public String getFluglinie(){
+       public String getFluglinien(){
            return _fluglinie;
        }
-        public String getPilot(){
+        public String getPiloten(){
             return _pilot;
         }
-        public String getPassagier(){
+        public String getPassagiere(){
             return _passagier;
         }
-        public String getBahn(){
+        public String getBahnen(){
             return _bahn;
         }
         public String getStartzeit(){
@@ -38,19 +38,19 @@ public class Flug {
         }
    
        //SETTER
-       public void setFlugzeug(String flugzeug){
+       public void setFlugzeuge(String flugzeug){
            _flugzeug = flugzeug;
        }    
-       public void setFluglinie(String fluglinie){
+       public void setFluglinien(String fluglinie){
            _fluglinie = fluglinie;
        }       
-       public void setPilot(String pilot){
+       public void setPiloten(String pilot){
         _pilot = pilot;
        }
-       public void setPassagier(String passagier){
+       public void setPassagiere(String passagier){
         _passagier = passagier;
     }    
-    public void setBahn(String bahn){
+    public void setBahnen(String bahn){
         _bahn = bahn;
     }      
     public void setStartzeit(String startzeit){
