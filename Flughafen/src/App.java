@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 public class App {
 
 
@@ -96,23 +93,18 @@ public class App {
             i = i+1;
         }
     } 
-    //Verkauefer Liste
 
 
-    //Main-Methode ist immer der Einsteigspunkt des Programms
     public static void main(String[] args) throws Exception {
-        //Initialisierung _autos --> In Klammer steht Anzahl der möglichen Elemente eines Arrays
         _airlines = new Airlines[8];
         _airlines [0] = new Airlines("BMW", "I3", "2020");
         _airlines [1] = new Airlines("Mercedes", "A220", "2019");
         _airlines [2] = new Airlines("VW", "Polo", "2005");
         
-        //Initialisierung _kunden
         _bahnen = new Bahnen[8];
         _bahnen [0] = new Bahnen("Herbert");
         _bahnen [1] = new Bahnen("Hans");
 
-        //Initialisierung _verkaeufe
         _flughaefen = new Flughaefen[8];
         _flughaefen [0] = new Flughaefen("Jordan", "Velte");
         _flughaefen [1] = new Flughaefen("Thomas", "Mueller");
@@ -137,9 +129,6 @@ public class App {
         _piloten [0] = new Piloten("Jordan", "Velte");
         _piloten [1] = new Piloten("Thomas", "Mueller");
         
-        //Neues Objekt der Klasse Menu
-        Menu menu = new Menu();
-        //Methode wird durch Punktnotation am Objekt aufgerufen
-        menu.startMenu();
+
     }
 }
