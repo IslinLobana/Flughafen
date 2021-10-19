@@ -106,7 +106,7 @@ public class Menu {
     public void showBahnen(){
         for (Bahnen bahnen : App.getALLBahnen()){
             if(bahnen != null){
-                System.out.println(bahnen.getName());
+                System.out.println(" Name: " + bahnen.getName());
             }
         }
     }
@@ -114,49 +114,49 @@ public class Menu {
         //For-Each Schleife
         for (Fluege fluege : App.getALLFluege()){
             if(fluege != null){
-                //System.out.println(fluege.getFlugzeuge().getNummer() + " " + fluege.getFlugzeuge().getPassagiereMax() + " " + fluege.getFlugzeuge().getPilotenMax() + " " + fluege.getFlugzeuge().getHersteller() + " Fluglinie: " + fluege.getFluglinien().getName() + " Piloten: " + fluege.getPiloten().getVorname() + " " + fluege.getPiloten().getNachname() + " Passagiere: " + fluege.getPassagiere().getVorname() + " " + fluege.getPassagiere().getNachname() + " Bahn: " + fluege.getBahnen().getName() + " " + fluege.getStartzeit());
+                //System.out.println(" Flugzeug: "fluege.getFlugzeuge().getNummer() + " " + fluege.getFlugzeuge().getPassagiereMax() + " " + fluege.getFlugzeuge().getPilotenMax() + " " + fluege.getFlugzeuge().getHersteller() + " Fluglinie: " + fluege.getFluglinien().getName() + " Piloten: " + fluege.getPiloten().getVorname() + " " + fluege.getPiloten().getNachname() + " Passagiere: " + fluege.getPassagiere().getVorname() + " " + fluege.getPassagiere().getNachname() + " Bahn: " + fluege.getBahnen().getName() + " " + fluege.getStartzeit());
             }
         }
     }
     public void showFlughaefen(){
         for (Flughaefen flughaefen : App.getALLFlughaefen()){
             if(flughaefen != null){
-                System.out.println(flughaefen.getName() + " " + flughaefen.getStandort());
+                System.out.println(" Name: " + flughaefen.getName() + " Standort:  " + flughaefen.getStandort());
             }
         }
     }
     public void showFluglinien(){
         for (Fluglinien fluglinien : App.getALLFluglinien()){
             if(fluglinien != null){
-                System.out.println(fluglinien.getName());
+                System.out.println(" Name: " + fluglinien.getName());
             }
         }
     }
     public void showFlugzeuge(){
         for (Flugzeuge flugzeuge : App.getALLFlugzeuge()){
             if(flugzeuge != null){
-                System.out.println(flugzeuge.getNummer() + " " + flugzeuge.getPassagiereMax() + " " + flugzeuge.getPilotenMax() + " " + flugzeuge.getHersteller());
+                System.out.println(" Flugzeugnummer: " +flugzeuge.getNummer() + " Maximale Passagier:  " + flugzeuge.getPassagiereMax() + " Maximale Piloten: " + flugzeuge.getPilotenMax() + " Hersteller:  " + flugzeuge.getHersteller());
             }
         }
     }
     public void showPassagiere(){
         for (Passagiere passagiere : App.getALLPassagiere()){
             if(passagiere != null){
-                System.out.println(passagiere.getVorname()+ " " + passagiere.getNachname());
+                System.out.println(" Vorname: " + passagiere.getVorname()+ " Nachname: " + passagiere.getNachname());
             }
         }
     }
     public void showPiloten(){
         for (Piloten piloten : App.getALLPiloten()){
             if(piloten != null){
-                System.out.println(piloten.getVorname() + " " + piloten.getNachname());
+                System.out.println(" Vorname: " + piloten.getVorname() + " Nachname: " + piloten.getNachname());
             }
         }
     }
     public void showTerminals(){
         for (Terminals terminals: App.getALLTerminals()){
             if(terminals != null){
-                //System.out.println(terminals.getName() + " Flugzeug: " + terminals.getAirlines().getFlugzeuge().getNummer() + " " + terminals.getAirlines().getFlugzeuge().getPassagiereMax() + " " + terminals.getAirlines().getFlugzeuge().getPilotenMax() + " " + terminals.getAirlines().getFlugzeuge().getHersteller() + " Fluglinie: " + terminals.getAirlines().getFluglinien().getName());
+                //System.out.println(" Name: "terminals.getName() + " Flugzeug: " + terminals.getAirlines().getFlugzeuge().getNummer() + " " + terminals.getAirlines().getFlugzeuge().getPassagiereMax() + " " + terminals.getAirlines().getFlugzeuge().getPilotenMax() + " " + terminals.getAirlines().getFlugzeuge().getHersteller() + " Fluglinie: " + terminals.getAirlines().getFluglinien().getName());
             }
         }
     }

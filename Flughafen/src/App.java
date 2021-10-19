@@ -96,39 +96,46 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        _airlines = new Airlines[8];
+       /* _airlines = new Airlines[8];
         _airlines [0] = new Airlines("BMW", "I3", "2020");
         _airlines [1] = new Airlines("Mercedes", "A220", "2019");
-        _airlines [2] = new Airlines("VW", "Polo", "2005");
+        _airlines [2] = new Airlines("VW", "Polo", "2005");*/
         
         _bahnen = new Bahnen[8];
-        _bahnen [0] = new Bahnen("Herbert");
-        _bahnen [1] = new Bahnen("Hans");
+        _bahnen [0] = new Bahnen("Nordwest");
+        _bahnen [1] = new Bahnen("Süden");
 
         _flughaefen = new Flughaefen[8];
-        _flughaefen [0] = new Flughaefen("Jordan", "Velte");
-        _flughaefen [1] = new Flughaefen("Thomas", "Mueller");
+        _flughaefen [0] = new Flughaefen("Helmut Schmidt Flughafen", "Hamburg");
 
 
         _fluglinien = new Fluglinien[8];
-        _fluglinien [0] = new Fluglinien("Jordan");
-        _fluglinien [1] = new Fluglinien("Thomas");
+        _fluglinien [0] = new Fluglinien("HAM-MUN");
+        _fluglinien [1] = new Fluglinien("HAM-NYC");
 
 
         _flugzeuge = new Flugzeuge[8];
-        _flugzeuge [0] = new Flugzeuge("Jordan", 200, 2, "Airbus");
+        _flugzeuge [0] = new Flugzeuge("Boeing 777", 227, 2, "Malaysia");
+        _flugzeuge [0] = new Flugzeuge("Boeing 767", 375, 2, "Malaysia");
+        _flugzeuge [0] = new Flugzeuge("Boeing 737", 294, 2, "Malaysia");
 
 
 
         _passagiere= new Passagiere[8];
-        _passagiere [0] = new Passagiere("Jordan", "Velte");
-        _passagiere [1] = new Passagiere("Thomas", "Mueller");
+        _passagiere [0] = new Passagiere("Nils", "Ahsendorf");
+        _passagiere [1] = new Passagiere("Holger", "Trampe");
 
 
         _piloten = new Piloten[8];
-        _piloten [0] = new Piloten("Jordan", "Velte");
-        _piloten [1] = new Piloten("Thomas", "Mueller");
-        
+        _piloten [0] = new Piloten("Andreas", "Lubitz");
+        _piloten [1] = new Piloten("Mike", "hoxlong");
 
+
+        /*_piloten = new Piloten[8];
+        _piloten [0] = new Piloten("Andreas", "Lubitz");
+        _piloten [1] = new Piloten("Mike", "hoxlong");*/
+        
+        Menu menu = new Menu();
+        menu.startMenu();
     }
 }
