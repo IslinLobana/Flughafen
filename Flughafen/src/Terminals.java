@@ -1,10 +1,11 @@
 public class Terminals {
-        //DEKLARATION
+        //DEKLARATIO
+        Airlines[] _airlines;
         String _name;
-        String _airline;
+        Airlines _airline;
     
         //CONSTRUCTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen
-        public Terminals (String name, String airline) {
+        public Terminals (String name, Airlines airline) {
             this.setName(name);
             this.setAirlines(airline);
         }
@@ -13,7 +14,7 @@ public class Terminals {
         public String getName(){
             return _name;
         }
-        public String getAirlines(){
+        public Airlines getAirlines(){
             return _airline;
         }
     
@@ -21,7 +22,7 @@ public class Terminals {
         public void setName(String name){
             _name = name;
         }    
-        public void setAirlines(String airline){
+        public void setAirlines(Airlines airline){
             _airline = airline;
         }       
 }

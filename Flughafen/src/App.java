@@ -1,11 +1,19 @@
 public class App {
 
+    static Airlines[] _airlines;
+    static Bahnen[] _bahnen;
+    static Fluege[] _fluege;
+    static Flughaefen[] _flughaefen;
+    static Fluglinien[] _fluglinien;
+    static Flugzeuge[] _flugzeuge;
+    static Passagiere[] _passagiere;
+    static Piloten[] _piloten;
+    static Terminals[] _terminals;
 
 
     public static void addAirline(Airlines airlines){
         addObject(airlines, getALLAirlines());
     }
-    static Airlines[] _airlines;
     public static Airlines[] getALLAirlines(){
         return _airlines;
     }
@@ -16,7 +24,6 @@ public class App {
         addObject(bahnen, getALLBahnen());
     }
 
-    static Bahnen [] _bahnen;
     public static Bahnen[] getALLBahnen(){
         return _bahnen;
     }
@@ -25,7 +32,6 @@ public class App {
     public static Fluege [] getALLFluege(){
         return _fluege;
     }
-    static Fluege [] _fluege;
     public static void addFlug(Fluege fluege){
         addObject(fluege, getALLFluege());
     }
@@ -34,7 +40,6 @@ public class App {
     public static Flughaefen[] getALLFlughaefen(){
         return _flughaefen;
     }
-    static Flughaefen[] _flughaefen;
     public static void addFlughafen(Flughaefen flughaefen){
         addObject(flughaefen, getALLFlughaefen());
     }
@@ -43,7 +48,6 @@ public class App {
     public static Fluglinien[] getALLFluglinien(){
         return _fluglinien;
     }
-    static Fluglinien[] _fluglinien;
     public static void addFluglinie(Fluglinien fluglinien){
         addObject(fluglinien, getALLFluglinien());
     }
@@ -51,7 +55,6 @@ public class App {
     public static Flugzeuge[] getALLFlugzeuge(){
         return _flugzeuge;
     }
-    static Flugzeuge[] _flugzeuge;
     public static void addFlugzeug(Flugzeuge flugzeuge){
         addObject(flugzeuge, getALLFlugzeuge());
     }
@@ -60,7 +63,6 @@ public class App {
     public static Passagiere[] getALLPassagiere(){
         return _passagiere;
     }
-    static Passagiere[] _passagiere;
     public static void addPassagier(Passagiere passagiere){
         addObject(passagiere, getALLPassagiere());
     }
@@ -69,7 +71,6 @@ public class App {
     public static Piloten[] getALLPiloten(){
         return _piloten;
     }
-    static Piloten[] _piloten;
     public static void addPilot(Piloten piloten){
         addObject(piloten, getALLPiloten());
     }
@@ -77,12 +78,10 @@ public class App {
     public static Terminals[] getALLTerminals(){
         return _terminals;
     }
-    static Terminals[] _terminals;
     public static void addTerminal(Terminals terminals){
         addObject(terminals, getALLTerminals());
     }
 
-    //15 Punkte lösung:
     public static void addObject(Object ele, Object[] array){
         int i = 0;
         for (Object a :array){
@@ -115,9 +114,9 @@ public class App {
 
 
         _flugzeuge = new Flugzeuge[8];
-        _flugzeuge [0] = new Flugzeuge("Boeing 777", 227, 2, "Malaysia");
-        _flugzeuge [0] = new Flugzeuge("Boeing 767", 375, 2, "Malaysia");
-        _flugzeuge [0] = new Flugzeuge("Boeing 737", 294, 2, "Malaysia");
+        _flugzeuge [0] = new Flugzeuge("777", 227, 2, "Boeing");
+        _flugzeuge [0] = new Flugzeuge("767", 375, 2, "Boeing");
+        _flugzeuge [0] = new Flugzeuge("737", 294, 2, "Boeing");
 
 
 

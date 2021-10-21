@@ -99,7 +99,7 @@ public class Menu {
         //For-Each Schleife
         for (Airlines airlines : App.getALLAirlines()){
             if(airlines != null){
-                //System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
+                System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
             }
         }
     }
@@ -114,7 +114,7 @@ public class Menu {
         //For-Each Schleife
         for (Fluege fluege : App.getALLFluege()){
             if(fluege != null){
-                //System.out.println(" Flugzeug: "fluege.getFlugzeuge().getNummer() + " " + fluege.getFlugzeuge().getPassagiereMax() + " " + fluege.getFlugzeuge().getPilotenMax() + " " + fluege.getFlugzeuge().getHersteller() + " Fluglinie: " + fluege.getFluglinien().getName() + " Piloten: " + fluege.getPiloten().getVorname() + " " + fluege.getPiloten().getNachname() + " Passagiere: " + fluege.getPassagiere().getVorname() + " " + fluege.getPassagiere().getNachname() + " Bahn: " + fluege.getBahnen().getName() + " " + fluege.getStartzeit());
+                System.out.println(" Flugzeug: " + fluege.getFlugzeuge().getNummer() + " " + fluege.getFlugzeuge().getPassagiereMax() + " " + fluege.getFlugzeuge().getPilotenMax() + " " + fluege.getFlugzeuge().getHersteller() + " Fluglinie: " + fluege.getFluglinien().getName() + " Piloten: " + fluege.getPiloten().getVorname() + " " + fluege.getPiloten().getNachname() + " Passagiere: " + fluege.getPassagiere().getVorname() + " " + fluege.getPassagiere().getNachname() + " Bahn: " + fluege.getBahnen().getName() + " " + fluege.getStartzeit());
             }
         }
     }
@@ -156,7 +156,7 @@ public class Menu {
     public void showTerminals(){
         for (Terminals terminals: App.getALLTerminals()){
             if(terminals != null){
-                //System.out.println(" Name: "terminals.getName() + " Flugzeug: " + terminals.getAirlines().getFlugzeuge().getNummer() + " " + terminals.getAirlines().getFlugzeuge().getPassagiereMax() + " " + terminals.getAirlines().getFlugzeuge().getPilotenMax() + " " + terminals.getAirlines().getFlugzeuge().getHersteller() + " Fluglinie: " + terminals.getAirlines().getFluglinien().getName());
+                System.out.println(" Name: " + terminals.getName() + " Flugzeug: " + terminals.getAirlines().getFlugzeuge().getNummer() + " " + terminals.getAirlines().getFlugzeuge().getPassagiereMax() + " " + terminals.getAirlines().getFlugzeuge().getPilotenMax() + " " + terminals.getAirlines().getFlugzeuge().getHersteller() + " Fluglinie: " + terminals.getAirlines().getFluglinien().getName());
             }
         }
     }
@@ -179,6 +179,7 @@ public class Menu {
         }
                 // Eingabe des Strings
                 String flugzeugchoice = getScanner().next();
+                int flugzeug_index = Integer.valueOf(flugzeugchoice);
                 //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
                 System.out.println(App.getALLFlugzeuge());
                
@@ -193,12 +194,13 @@ public class Menu {
         }
                 // Eingabe des Strings
                 String flugliniechoice = getScanner().next();
+                int fluglinie_index = Integer.valueOf(flugliniechoice);
                 //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
                 System.out.println(App.getALLFluglinien());
                
                 b = 0;
         System.out.println("Es wurde eine neue Airline eingetragen.");
-        App.addAirline(new Airlines(choicename, flugzeugchoice, flugliniechoice));
+        App.addAirline(new Airlines(choicename, App.getALLFlugzeuge()[flugzeug_index], App.getALLFluglinien()[fluglinie_index]));
         System.out.println(App.getALLAirlines());
     }
 
@@ -351,13 +353,12 @@ public class Menu {
         int a = 0;
         for(Airlines airlines : App.getALLAirlines()){
             if(airlines != null){
-                //System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
+                System.out.println("Flugzeug: " + airlines.getFlugzeuge().getNummer() + " " + airlines.getFlugzeuge().getPassagiereMax() + " " + airlines.getFlugzeuge().getPilotenMax() + " " + airlines.getFlugzeuge().getHersteller() + " Fluglinie: " + airlines.getFluglinien().getName() + " Name: " + airlines.getName());
                 a++;
             }
         }
                 // Eingabe des Strings
                 String flugzeugchoice = getScanner().next();
-                //Ausgabe des Arrays mit den Autos! Eckige Klammern wählen das richtige Element des Arrays!
                 System.out.println(App.getALLFlugzeuge());
                
                 a = 0;
